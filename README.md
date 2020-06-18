@@ -7,14 +7,11 @@ To run you will need:
 
 To run:
 
-yarn install
-
-yarn android.app
-
-yarn ios.app
+- yarn install
+- yarn android.app
+- yarn ios.app
 
 To generate and open test report:
 
-yarn report:generate
-
-yarn repor:open
+- yarn report:generate
+- yarn repor:open
