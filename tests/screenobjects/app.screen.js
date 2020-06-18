@@ -1,11 +1,5 @@
 import { DEFAULT_TIMEOUT } from '../constants';
 
-const SELECTORS = {
-    TOOL_BAR: 'id=vTextViewToolbar',
-    PROFILE_BUTTON: '~Profile',
-    BACK_BUTTON: '~Back'
-};
-
 export default class AppScreen {
     constructor (selector) {
         this.selector = selector;
@@ -24,15 +18,5 @@ export default class AppScreen {
         });
     }
 
-    get toolBar () {
-        return $(SELECTORS.TOOL_BAR);
-    }
 
-    get profileButton () {
-        return $(SELECTORS.PROFILE_BUTTON);
-    }
-
-    get backButton () {
-        return $(SELECTORS.BACK_BUTTON);
-    }
 }
