@@ -1,8 +1,3 @@
-# automation-StayQuit-appium-webdriver-node
-
-Env:
-IOS_APP = Path to ios .app or .zip
-ANDROID_APK = Path to Android APK
 
 To run you will need: 
 - Appium installed: http://appium.io/ (Gui is recomended for the inspecting tool).
