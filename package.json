@@ -3,16 +3,17 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "code:check": "yarn code:lint && yarn code:prettier",
-    "code:format": "yarn code:lint --fix --quiet && yarn code:prettier --write",
+    "code:check": "yarn code:lint ",
+    "lint-fix": "eslint \"**/*.js\" --fix --ignore-pattern ./.eslintrc.js",
     "code:lint": "eslint .",
-    "code:prettier": "prettier --check \"**/*.js*\"",
     "report:generate": "yarn report:allure generate --clean ./test-report/allure-result/ -o ./test-report/allure-report",
     "report:allure": "npx allure",
     "report:open": "yarn report:allure open test-report/allure-report",
     "android.app": "./node_modules/.bin/wdio ./config/wdio.android.app.conf.js",
     "ios.app": "./node_modules/.bin/wdio ./config/wdio.ios.app.conf.js",
-    "e2e": "yarn android.app && yarn ios.app"
+    "e2e": "yarn android.app && yarn ios.app",
+    "lint-diff": "git diff --name-only --cached --relative | grep \\\\.js$ | xargs eslint",
+    "precommit": "npm run lint-diff"
   },
   "repository": {
     "type": "git",
@@ -46,6 +47,8 @@
     "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
     "cucumber": "^6.0.5",
+    "debug": "^4.1.1",
+    "dotenv": "^8.2.0",
     "eslint": "^6.8.0",
     "eslint-config-standard": "^14.1.1",
     "eslint-plugin-import": "^2.20.2",
@@ -53,12 +56,13 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.1",
     "eslint-plugin-wdio": "^6.0.12",
-    "husky": "^4.2.5",
+    "husky": "^0.14.3",
     "log4js": "^6.2.1",
-    "mocha": "^7.1.2",
     "node-fetch": "^2.6.0",
     "webdriverio": "^6.0.13",
-    "debug": "^4.1.1",
-    "dotenv": "^8.2.0"
+    "eslint-config-prettier": "^6.11.0",
+    "eslint-plugin-prettier": "^3.1.4",
+    "prettier": "^2.0.5",
+    "prettier-eslint": "^11.0.0"
   }
 }
